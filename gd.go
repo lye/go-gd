@@ -481,7 +481,12 @@ func searchfonts(dir string) (out []string) {
 
 				out = append(out, searchfonts(entry)...)
 			} else {
-				ext := strings.ToLower(filepath.Ext(name)[1:])
+				ext := strings.ToLower(filepath.Ext(name))
+
+				if strings.HasPrefix(ext, ".") {
+					ext = ext[1:]
+				}
+
 				whitelist := []string{"ttf", "otf", "cid", "cff", "pcf", "fnt", "bdr", "pfr", "pfa", "pfb", "afm"}
 
 				for _, wext := range whitelist {
