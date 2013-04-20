@@ -1,4 +1,5 @@
 package gd
+
 // Evgeny Stepanischev. 2011. http://bolknote.ru/ imbolk@gmail.com
 
 // #include <gd.h>
@@ -17,6 +18,7 @@ import "io/ioutil"
 import . "unsafe"
 import . "math"
 import "errors"
+
 //import "fmt"
 
 type Image struct {
@@ -69,7 +71,6 @@ func CreateFromJpeg(infile string) *Image {
 
 	panic(errors.New("Error occurred while opening file."))
 }
-
 
 func CreateFromGif(infile string) *Image {
 	file := C.fopen(C.CString(infile), C.CString("rb"))
