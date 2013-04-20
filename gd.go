@@ -8,7 +8,8 @@ package gd
 // #include <gdfontmb.h>
 // #include <gdfontl.h>
 // #include <gdfontg.h>
-// #cgo LDFLAGS: -lgd
+// #cgo CFLAGS: -I/usr/local/include
+// #cgo LDFLAGS: -L/usr/local/lib -lgd
 import "C"
 import "path/filepath"
 import "strings"
